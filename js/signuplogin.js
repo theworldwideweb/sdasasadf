@@ -6,7 +6,7 @@ function login() {
     const password = document.getElementById("password").value;
 
     // Perform authentication (replace this with your authentication logic)
-    if (username === "example" && password === "exampleownertest!") (username === "vidious" && password === "vidious123!") {
+    if (username === "vidious" && password === "vidious123!") {
         // Redirect the user to the home page
         window.location.href = "/home";
     } else {
