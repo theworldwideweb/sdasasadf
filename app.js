@@ -1,10 +1,12 @@
 // app.js
 
+// Require necessary modules
 const express = require('express');
 const mongoose = require('mongoose');
-const multer = require('multer'); // For handling file uploads
-const fs = require('fs'); // For interacting with the file system
+const multer = require('multer');
+const path = require('path');
 
+// Create Express application
 const app = express();
 const port = 3000;
 
@@ -17,14 +19,13 @@ mongoose.connect('mongodb://localhost:27017/Vidious123', { useNewUrlParser: true
 const videoSchema = new mongoose.Schema({
     title: String,
     description: String,
-    filePath: String, // Path to the uploaded video file
-    // Add more fields as needed
+    filePath: String,
 });
 
 // Create Video model
 const Video = mongoose.model('Video', videoSchema);
 
-// Multer setup for handling file uploads
+// Configure Multer for file uploads
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'uploads/');
@@ -45,17 +46,25 @@ app.post('/upload', upload.single('video'), async (req, res) => {
         const newVideo = new Video({
             title: title,
             description: description,
-            filePath: req.file.path, // Path to the uploaded video file
+            filePath: req.file.path,
         });
 
         // Save the new video document to the database
-        await newVideo.save();
+        const savedVideo = await newVideo.save();
 
-        res.status(200).send('Video uploaded successfully!');
+        // Generate the link for the uploaded video
+        const videoLink = `${req.protocol}://${req.get('host')}/videos/${savedVideo._id}`;
+
+        // Send the video link in the response
+        res.status(200).json({ videoLink: videoLink });
     } catch (err) {
         console.error('Failed to upload video:', err);
         res.status(500).send('Failed to upload video.');
     }
 });
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Start the server
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
