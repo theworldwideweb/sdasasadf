@@ -68,35 +68,6 @@ a:hover {
     vertical-align: middle;
 }
 
-/* video list */
-.video-list {
-    display: flex;
-    flex-direction: column; /* Stack videos vertically */
-    gap: 10px;
-}
-
-.video {
-    position: relative;
-    width: calc(9 / 16 * 100%); /* 9:16 aspect ratio */
-    height: 0;
-    padding-bottom: 56.25%; /* 9:16 aspect ratio */
-    overflow: hidden;
-}
-
-.video video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    object-fit: cover; /* Fill the container while preserving aspect ratio */
-}
-
-.caption {
-    margin-top: 5px;
-    font-size: 10px;
-}
-
 /* view profile css */
 
 .view-profile {
