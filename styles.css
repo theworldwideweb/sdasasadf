@@ -99,7 +99,9 @@ a:hover {
 /* login home css */
 
 .login {
-    display: inline-block;
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
     text-decoration: none;
     background-color: #007bff;
     color: #fff;
@@ -111,7 +113,6 @@ a:hover {
 .login:hover {
     background-color: #0056b3;
 }
-
 
 .login span {
     vertical-align: middle;
