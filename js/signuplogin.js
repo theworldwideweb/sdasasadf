@@ -34,3 +34,19 @@ function showLogin() {
     document.getElementById("signupForm").style.display = "none";
     document.getElementById("loginForm").style.display = "block";
 }
+
+// signuplogin.js
+
+function togglePasswordVisibility() {
+    var passwordField = document.getElementById("password");
+    var newPasswordField = document.getElementById("newPassword");
+
+    // Toggle the type attribute of the password field
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        newPasswordField.type = "text";
+    } else {
+        passwordField.type = "password";
+        newPasswordField.type = "password";
+    }
+}
