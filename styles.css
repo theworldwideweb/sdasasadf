@@ -41,3 +41,30 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* styles.css */
+.upload-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.upload-button img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.upload-button span {
+    vertical-align: middle;
+}
+
