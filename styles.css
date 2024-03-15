@@ -87,19 +87,18 @@ a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
     object-fit: cover; /* Fill the container while preserving aspect ratio */
 }
 
 .caption {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 /* view profile css */
 
-/* styles.css */
 .view-profile {
     display: inline-block;
     text-decoration: none;
