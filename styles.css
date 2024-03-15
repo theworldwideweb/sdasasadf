@@ -68,17 +68,18 @@ a:hover {
     vertical-align: middle;
 }
 
-/* styles.css */
+/* video list */
 .video-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack videos vertically */
     gap: 10px;
 }
 
 .video {
     position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive video */
+    width: calc(9 / 16 * 100%); /* 9:16 aspect ratio */
+    height: 0;
+    padding-bottom: 56.25%; /* 9:16 aspect ratio */
     overflow: hidden;
 }
 
@@ -88,17 +89,10 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Fill the container while preserving aspect ratio */
 }
 
 .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 8px;
+    margin-top: 5px;
     font-size: 14px;
-    text-align: left;
 }
