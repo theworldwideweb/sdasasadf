@@ -96,3 +96,31 @@ a:hover {
     margin-top: 5px;
     font-size: 14px;
 }
+
+/* view profile css */
+
+/* styles.css */
+.view-profile {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile:hover {
+    background-color: #0056b3;
+}
+
+.view-profile img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.view-profile span {
+    vertical-align: middle;
+}
