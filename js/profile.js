@@ -1,7 +1,7 @@
 // profile.js
 document.addEventListener("DOMContentLoaded", function() {
-    // Get username from the server or other source
-    const username = "ExampleUser";
+    // Get username from local storage or other source
+    const username = localStorage.getItem("username"); // Example: You might store the username during signup/login
 
     // Set username
     const usernameElement = document.getElementById("username");
