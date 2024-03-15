@@ -1,12 +1,40 @@
 // profile.js
 document.addEventListener("DOMContentLoaded", function() {
-    // Assume you have a variable 'username' containing the user's username
-    const username = "ExampleUsername"; // Replace this with the actual username
+    // Get username from the server or other source
+    const username = "ExampleUser";
 
-    // Set the page title to the username
-    document.title = username + "'s Profile";
-
-    // Set the username in the header
+    // Set username
     const usernameElement = document.getElementById("username");
     usernameElement.textContent = username;
+
+    // Form submission handler for profile picture upload
+    const profilePicForm = document.getElementById("profilePicForm");
+    profilePicForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const profilePicInput = document.getElementById("profilePicInput");
+        const file = profilePicInput.files[0];
+
+        if (file) {
+            const formData = new FormData();
+            formData.append("profilePic", file);
+
+            // Send profile picture to the server using AJAX or Fetch API
+            // Handle response from server as needed
+            // Example:
+            // fetch("/api/profile/uploadProfilePic", {
+            //     method: "POST",
+            //     body: formData
+            // })
+            // .then(response => {
+            //     // Handle response
+            // })
+            // .catch(error => {
+            //     console.error("Error uploading profile picture:", error);
+            // });
+        } else {
+            // Handle case when no file is selected
+            console.error("No file selected.");
+        }
+    });
 });
