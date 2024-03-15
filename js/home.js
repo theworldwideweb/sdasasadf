@@ -28,7 +28,7 @@ function fetchVideos() {
         setTimeout(() => {
             // Example list of videos with upload timestamps (replace with actual data from server)
             const videos = [
-                { id: 1, url: 'video1.mp4', caption: 'Caption 1', views: 100, uploadTimestamp: '2024-03-16T12:00:00Z' },
+                { id: 1, url: '/video/21Hu4pxkml00uHFvOEHJ', caption: 'beat to koto nai', views: 100, uploadTimestamp: '2024-03-16T12:00:00Z' },
                 { id: 2, url: 'video2.mp4', caption: 'Caption 2', views: 200, uploadTimestamp: '2024-03-15T12:00:00Z' },
                 { id: 3, url: 'video3.mp4', caption: 'Caption 3', views: 150, uploadTimestamp: '2024-03-14T12:00:00Z' }
             ];
