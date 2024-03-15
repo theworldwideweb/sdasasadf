@@ -9,11 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="pageTitle">User Profile</h1>
+        <h1>User Profile</h1>
         <h2 id="username">Username</h2>
-        <div id="videos">
-            <!-- Videos will be dynamically loaded here -->
+        <div id="profilePicContainer">
+            <!-- Display current profile picture if available -->
+            <img src="placeholder.jpg" alt="Profile Picture" id="profilePic">
         </div>
+        <form id="profilePicForm" enctype="multipart/form-data">
+            <input type="file" id="profilePicInput" accept="image/*" required>
+            <button type="submit">Upload Profile Picture</button>
+        </form>
     </div>
 
     <script src="/js/profile.js"></script>
