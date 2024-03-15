@@ -10,6 +10,8 @@
     <style>
 /* styles.css */
 
+/* styles.css */
+
 .container {
     width: 100%;
     max-width: 800px;
@@ -20,8 +22,7 @@
 .video-list {
     display: flex;
     flex-direction: column; /* Stack videos vertically */
-    gap: 20px; /* Vertical spacing between videos */
-    justify-items: center;
+    gap: 30px; /* Vertical spacing between videos */
 }
 
 .video {
@@ -30,7 +31,7 @@
     height: 0;
     padding-bottom: 56.25%; /* 9:16 aspect ratio */
     overflow: hidden;
-    margin-bottom: 20px; /* Spacing between videos */
+    margin-bottom: 30px; /* Spacing between videos */
 }
 
 .video video {
@@ -43,8 +44,15 @@
 }
 
 .caption {
-    margin-top: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #242222;
+    padding: 8px;
     font-size: 14px;
+    text-align: center;
 }
 
 
