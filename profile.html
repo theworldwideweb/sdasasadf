@@ -11,7 +11,7 @@
     <div class="container">
         <h1>User Profile</h1>
         <div id="profileInfo">
-            <h2 id="username">Username</h2>
+            <h2 id="username"></h2> <!-- Display the username here -->
             <div id="profilePicContainer">
                 <!-- Display current profile picture if available -->
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUNJREFUSEu1lYFtwzAMBN+bpJMk2aSdJM0kaSZJO0nbSdJcIBk0TdFygxAwZMAyn/p/UoOeHMOT86sHYCeJZ1vWn9v6Kem3rLw3IwPYSDqVpFkOAPeSWGfRAngtyXsZJPn5tvnd/xABrE1ucx49iAeAlu/esoN9M7o8wCXhvFZHEZzy0CgE0dHkHhYgo+ZN0odLmO0H4O4uC4BArapeApdkdI5aWAAsSVVRRADsuy7RZAEQl6qimLmjFENRUSA2RU0oygCsz5dEnuhrT5A5aK1zMQTG6BaZE9SngrX04nsoMgONU/iILMoeqOKfSIfxn6VGG/2ccOTt2my0WpUdFemkLKfwE3di6Z5hV+f/V+1OQ49vzNmJW+M66+oWW1GvpDda74UD54i66sKxVeIUwOqVyTeSVcr+fWWuba5wf8+l/xDQH/+ESxlufBg7AAAAAElFTkSuQmCC" alt="Profile Picture" id="profilePic">
@@ -24,5 +24,12 @@
     </div>
 
     <script src="/js/profile.js"></script>
+    <script>
+        // Retrieve the username from local storage and display it
+        const username = localStorage.getItem("loggedInUsername");
+        if (username) {
+            document.getElementById("username").textContent = username;
+        }
+    </script>
 </body>
 </html>
