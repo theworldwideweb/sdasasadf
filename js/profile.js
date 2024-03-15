@@ -1,40 +1,24 @@
 // profile.js
-document.addEventListener("DOMContentLoaded", function() {
-    // Get username from local storage or other source
-    const username = localStorage.getItem("username"); // Example: You might store the username during signup/login
 
-    // Set username
-    const usernameElement = document.getElementById("username");
-    usernameElement.textContent = username;
+// Function to retrieve user information from local storage and display it on the profile page
+function displayUserProfile() {
+    // Retrieve user information from local storage
+    const userJson = localStorage.getItem("vidiousUser");
+    
+    if (userJson) {
+        // Parse the JSON string to get the user object
+        const user = JSON.parse(userJson);
 
-    // Form submission handler for profile picture upload
-    const profilePicForm = document.getElementById("profilePicForm");
-    profilePicForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+        // Display the username
+        document.getElementById("username").textContent = user.username;
+        
+        // You can display other user information here as well, such as profile picture, etc.
+    } else {
+        console.log("User information not found in local storage.");
+    }
+}
 
-        const profilePicInput = document.getElementById("profilePicInput");
-        const file = profilePicInput.files[0];
-
-        if (file) {
-            const formData = new FormData();
-            formData.append("profilePic", file);
-
-            // Send profile picture to the server using AJAX or Fetch API
-            // Handle response from server as needed
-            // Example:
-            // fetch("/api/profile/uploadProfilePic", {
-            //     method: "POST",
-            //     body: formData
-            // })
-            // .then(response => {
-            //     // Handle response
-            // })
-            // .catch(error => {
-            //     console.error("Error uploading profile picture:", error);
-            // });
-        } else {
-            // Handle case when no file is selected
-            console.error("No file selected.");
-        }
-    });
-});
+// Call the displayUserProfile function when the profile page loads
+window.onload = function() {
+    displayUserProfile();
+};
