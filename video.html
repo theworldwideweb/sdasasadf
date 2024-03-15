@@ -1,0 +1,41 @@
+<!-- video.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+</head>
+<body>
+    <video id="videoPlayer" controls autoplay>
+        <!-- Video will be dynamically loaded here -->
+    </video>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get video ID from URL (assuming URL is in the format /videos/{videoID})
+            const videoID = window.location.pathname.split('/').pop();
+
+            // Fetch video data from the server
+            fetch(`/videos/${videoID}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Video not found.');
+                    }
+                    return response.blob();
+                })
+                .then(blob => {
+                    // Create URL object from blob
+                    const videoURL = URL.createObjectURL(blob);
+                    
+                    // Set video source to the URL
+                    const videoPlayer = document.getElementById('videoPlayer');
+                    videoPlayer.src = videoURL;
+                })
+                .catch(error => {
+                    console.error('Error fetching video:', error);
+                });
+        });
+    </script>
+</body>
+</html>
