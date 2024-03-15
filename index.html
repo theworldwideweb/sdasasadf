@@ -13,7 +13,7 @@
         <div id="loginForm">
             <input type="text" id="username" placeholder="Username">
             <input type="password" id="password" placeholder="Password">
-            <button onclick="togglePasswordVisibility()">Show Password</button> <!-- Toggle button -->
+            <img src="show_password.png" onclick="togglePasswordVisibility()" alt="Show Password"> <!-- Image button -->
             <button onclick="login()">Login</button>
             <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
             <p>Continue without account <a href="home">Home</a></p>
@@ -21,7 +21,7 @@
         <div id="signupForm" style="display:none;">
             <input type="text" id="newUsername" placeholder="Username">
             <input type="password" id="newPassword" placeholder="Password">
-            <button onclick="togglePasswordVisibility()">Show Password</button> <!-- Toggle button -->
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR5JREFUSEvtlEFuwkAMRV9uQrdUnIFyC3aFkxRO0rLjFi1nQGVbbtLy20k0TOw4kZpdRooymrH9v//Yrhh5VSPHZwIIFY4kmgEbYAlor++aoup/uJ29daF0AeyAl5DiH6CAZN9aFoBYvgJPPYLnJgJaZRn+3pUAXnA575McshG4stO+E6QEeDeYK/iDkY2Cy94CaexzAD2mpCnXNjFfAMd0uQbOiYxAPJ87ib4MNnIUG2XxCcxTpAvwmOzlV64m6zwDS54IQPfffQE8iVQZH4AlUSRrq4r+45FFRqTcMvUqI+9alalVEK2K8xrNAon6zixnb1TUM6jPqBCwmrD3qMiZ1l37nA4lTT7sTl5g7w0iGQbfR+N6cMDSYQIIJfwB6Ls9GV0z7ecAAAAASUVORK5CYII=" onclick="togglePasswordVisibility()" alt="Show Password"> <!-- Image button -->
             <button onclick="signup()">Sign Up</button>
             <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
             <p>Continue without account <a href="home">Home</a></p>
