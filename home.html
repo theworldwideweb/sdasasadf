@@ -6,6 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Vidious</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+/* styles.css */
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.video-list {
+    display: flex;
+    flex-direction: column; /* Stack videos vertically */
+    gap: 20px; /* Vertical spacing between videos */
+}
+
+.video {
+    position: relative;
+    width: calc(9 / 16 * 100%); /* 9:16 aspect ratio */
+    height: 0;
+    padding-bottom: 56.25%; /* 9:16 aspect ratio */
+    overflow: hidden;
+    margin-bottom: 20px; /* Spacing between videos */
+}
+
+.video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill the container while preserving aspect ratio */
+}
+
+.caption {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+        
+    </style>
 </head>
 <body>
     
